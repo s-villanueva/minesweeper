@@ -24,6 +24,7 @@ public class Frame extends JFrame {
 
                         ArrayList q = tablero.checkSurroundings(a, s);
                         Queue <UbicacionObj> queue = new LinkedList<UbicacionObj>();
+
                         for (int l = 0; l < q.size(); l++) {
                             queue.add((UbicacionObj) q.get(l));
                         }
@@ -52,6 +53,7 @@ public class Frame extends JFrame {
         //Declaración de variables de interfaz
         Tablero tablero = new Tablero();
         JFrame frame = new JFrame();
+        JLabel label = new JLabel();
         JPanel panel = new JPanel(new GridLayout(10, 10));
         Frame frame1 = new Frame();
         //Declaración de parámetros
@@ -62,6 +64,8 @@ public class Frame extends JFrame {
         frame.setResizable(false);
         JPanel p = frame1.init(tablero, panel);
         tablero.print();
+        label.setText("Minesweeper");
+        frame.add(label);
         //Declaracion de botones
         frame.add(p);
     }
